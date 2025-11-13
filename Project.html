@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project 1 [Name]</title>
+    <title>Project 1</title>
 </head>
-<body>
-    
+<body style="margin: 0;">
+    <!-- Split page into two columns -->
+    <div style="display: flex; min-height: 100vh; padding: 8px; box-sizing: border-box;">
+        <!-- Left column -->
+        <div style="flex: 1; padding: 16px; border: 1px solid black; box-sizing: border-box;">
+            <!-- Content for the left column -->
+            <h1>Project 1</h1>
+            <!--button to link to source code-->
+            <a href="placeholder_for_source_code_link" target="_blank">
+                <button>View Source Code</button>
+            </a>
+            <p>This is the left column content for Project 1.</p>
+        </div>
+
+        <!-- Right column -->
+        <div style="flex: 1; padding: 16px; border: 1px solid black; box-sizing: border-box;">
+            <!-- Video functionality -->
+            <h2>Project Video</h2>
+            <video width="100%" controls>
+                <source src="placeholder_for_video_link.mp4" type="video/mp4" />
+            </video>
+        </div>
+    </div>
 </body>
 </html>
