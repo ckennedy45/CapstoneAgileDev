@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume</title>
   </head>
+
   <body>
-    
     <!-- NAVIGATION BAR -->
     <nav>
       <table width="100%">
@@ -19,26 +19,20 @@
     </nav>
     <!-- END NAVIGATION BAR -->
 
-    <table width="100%">
-      <tr>
-        <td>
-          <div class="click-text">
-            <p>Click the image to edit the resume</p>
-          </div>
-        </td>
-        <td>
-          <div class="button-css">
-            <button>Download Resume</button>
-          </div>
-        </td>
-      </tr>
-    </table>
+    <h3>Resume Image</h3>
+    <a
+      href="Images/resume.pdf"
+      class="download-btn btn primary"
+      download
+      aria-label="Downloadable PDF of resume"
+    >
+      Download PDF
+    </a>
 
-    <br />
-
-    <!-- Resume image underneath -->
-    <div align="center">
-      <img src="Images/resume.png" alt="Resume" width="50%" />
-    </div>
+    <p class="page-subtitle">Click to view full size.</p>
+    <!-- Allows the user to pull the resume into a different window -->
+    <a href="Images/resume.png" target="_blank">
+      <img src="Images/resume.png" alt="Resume Image" />
+    </a>
   </body>
 </html>
