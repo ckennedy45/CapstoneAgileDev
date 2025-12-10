@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project 1</title>
+    <link rel="stylesheet" href="CSS/style.css" />
   </head>
-  <body style="margin: 0">
+  <body>
     <!-- NAVIGATION BAR -->
     <nav>
       <div class="nav-container">
@@ -24,11 +25,11 @@
         <ul class="nav-links">
           <li><a href="Home.html">Home</a></li>
           <li class="dropdown">
-            <a href="Project.html">Projects &#9662;</a>
+            <a href="Project.html">Projects</a>
             <div class="dropdown-content">
-              <a href="Project.html">Project 1</a>
-              <a href="Project2.html">Project 2</a>
-              <a href="Project3.html">Project 3</a>
+              <a href="Project.html">Eureka - Campus Buddy!</a>
+              <a href="Project2.html">Personalized Education Tools</a>
+              <a href="Project3.html">ZinMK.com </a>
             </div>
           </li>
           <li><a href="Resume.html">Resume</a></li>
@@ -38,27 +39,13 @@
     <script src="js/navbar.js"></script>
 
     <!-- END NAVIGATION BAR -->
-    <!-- Split page into two columns -->
-    <div
-      style="
-        display: flex;
-        min-height: 100vh;
-        padding: 8px;
-        box-sizing: border-box;
-      "
-    >
-      <!-- Left column -->
-      <div
-        style="
-          flex: 1;
-          padding: 16px;
-          border: 1px solid black;
-          box-sizing: border-box;
-        "
-      >
-        <!-- Content for the left column -->
-        <h1><b>Eureka</b></h1>
-        <!--button to link to source code-->
+
+    <!-- Project Content - Two Column Layout -->
+    <div class="project-container">
+      <!-- Left Column - Project Info -->
+      <div class="project-column">
+        <h1>Eureka</h1>
+        <!-- Button to link to source code -->
         <a
           href="https://github.com/ZinMK/eurekaupgrade.github.io"
           target="_blank"
@@ -69,22 +56,24 @@
           Eureka is a full stack hangout finder app geared towards freshmen to
           help them meet new people and organize hangouts
         </p>
+        <h3>Tech Stack</h3>
+        <ul>
+          <li><b>Frontend:</b> HTML, CSS, JavaScript</li>
+          <li><b>Backend:</b> Node.js, Express</li>
+          <li><b>Database:</b> MongoDB</li>
+          <li><b>Tools:</b> Git, GitHub</li>
+        </ul>
       </div>
 
-      <!-- Right column -->
-      <div
-        style="
-          flex: 1;
-          padding: 16px;
-          border: 1px solid black;
-          box-sizing: border-box;
-        "
-      >
-        <!-- Video functionality -->
+      <!-- Right Column - Project Video -->
+      <div class="project-column">
         <h2>Project Video</h2>
-        <video width="100%" controls>
-          <source src="video.mp4" type="video/mp4" />
-        </video>
+        <div class="project-video-container">
+          <video controls>
+            <source src="video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
   </body>

@@ -153,13 +153,7 @@ nav a:hover {
   gap: 1.5rem;
 }
 
-.left-column {
-  /* Left column specific styles if needed */
-}
-
-.right-column {
-  /* Right column specific styles if needed */
-}
+/* Left and right column styles are handled by .column class */
 
 /* ============================================
    CARD-BASED STRUCTURE
@@ -715,6 +709,87 @@ table {
   color: var(--st-gold);
 }
 
+/* Navbar Dropdown Styles */
+.nav-links .dropdown {
+  position: relative;
+}
+
+/* Extend the hover area of the dropdown link */
+.nav-links .dropdown > a {
+  padding-bottom: 1rem;
+}
+
+.nav-links .dropdown-content {
+  display: none;
+  position: absolute;
+  top: calc(100% - 0.5rem);
+  left: 0;
+  background-color: var(--white);
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 4px;
+  margin-top: 0;
+  padding: 1rem 0;
+  padding-top: 1.5rem;
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-links .dropdown-content a {
+  color: var(--st-purple);
+  padding: 12px 20px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.nav-links .dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.nav-links .dropdown-content a:hover {
+  background-color: var(--light-gray);
+  color: var(--st-purple-dark);
+  padding-left: 24px;
+}
+
+.nav-links .dropdown:hover .dropdown-content,
+.nav-links .dropdown-content:hover {
+  display: block;
+}
+
+.nav-links .dropdown > a {
+  cursor: pointer;
+  position: relative;
+}
+
+/* Dropdown arrow styling */
+.nav-links .dropdown > a::after {
+  content: " ▼";
+  font-size: 0.8em;
+  margin-left: 4px;
+  transition: transform 0.3s ease;
+}
+
+.nav-links .dropdown:hover > a::after {
+  transform: rotate(180deg);
+}
+
 /* Hamburger button - hidden on desktop */
 .hamburger {
   display: none;
@@ -831,5 +906,191 @@ table {
 
   .nav-overlay.active {
     display: block;
+  }
+}
+
+/* ============================================
+   PROJECT PAGE STYLES
+   ============================================ */
+
+/* Project page container - two column layout */
+.project-container {
+  display: flex;
+  min-height: calc(100vh - 80px);
+  padding: 2rem;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Project columns */
+.project-column {
+  flex: 1;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid var(--st-purple);
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-column:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(79, 33, 112, 0.2);
+}
+
+/* Project title */
+.project-column h1 {
+  color: var(--st-purple);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--st-gold);
+}
+
+.project-column h2 {
+  color: var(--st-purple);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.project-column h3 {
+  color: var(--st-purple);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Project description */
+.project-column p {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* Source code button */
+.project-column a button,
+.project-column button {
+  background: linear-gradient(
+    135deg,
+    var(--st-purple) 0%,
+    var(--st-purple-dark) 100%
+  );
+  color: var(--white);
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(79, 33, 112, 0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.project-column a button:hover,
+.project-column button:hover {
+  background: linear-gradient(
+    135deg,
+    var(--st-purple-light) 0%,
+    var(--st-purple) 100%
+  );
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(79, 33, 112, 0.4);
+}
+
+.project-column a button:active,
+.project-column button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(79, 33, 112, 0.3);
+}
+
+/* Tech stack list */
+.project-column ul {
+  padding-left: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.project-column ul li {
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+.project-column ul li b {
+  color: var(--st-purple);
+  font-weight: 600;
+}
+
+/* Video container */
+.project-video-container {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.project-video-container video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: var(--dark-gray);
+}
+
+/* Responsive design for project pages */
+@media (max-width: 768px) {
+  .project-container {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .project-column {
+    padding: 1.5rem;
+  }
+
+  .project-column h1 {
+    font-size: 2rem;
+  }
+
+  .project-column h2 {
+    font-size: 1.5rem;
+  }
+
+  .project-column h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-container {
+    padding: 0.5rem;
+  }
+
+  .project-column {
+    padding: 1rem;
+  }
+
+  .project-column h1 {
+    font-size: 1.75rem;
+  }
+
+  .project-column p {
+    font-size: 1rem;
+  }
+
+  .project-column a button,
+  .project-column button {
+    width: 100%;
+    padding: 14px 20px;
   }
 }
