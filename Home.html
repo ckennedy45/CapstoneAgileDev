@@ -10,14 +10,35 @@
   <body>
     <!-- NAVIGATION BAR -->
     <nav>
-      <table width="100%">
-        <tr>
-          <td align="left"><a href="Home.html">Home</a></td>
-          <td align="center"><a href="Project.html">Projects</a></td>
-          <td align="right"><a href="Resume.html">Resume</a></td>
-        </tr>
-      </table>
+      <div class="nav-container">
+        <!-- Hamburger Button (hidden on desktop) -->
+        <button
+          class="hamburger"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links">
+          <li><a href="Home.html">Home</a></li>
+          <li class="dropdown">
+            <a href="Project.html">Projects &#9662;</a>
+            <div class="dropdown-content">
+              <a href="Project.html">Project 1</a>
+              <a href="Project2.html">Project 2</a>
+              <a href="Project3.html">Project 3</a>
+            </div>
+          </li>
+          <li><a href="Resume.html">Resume</a></li>
+        </ul>
+      </div>
     </nav>
+    <script src="js/navbar.js"></script>
+
     <!-- END NAVIGATION BAR -->
 
     <!-- Two Column Layout -->

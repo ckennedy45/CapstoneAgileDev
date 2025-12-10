@@ -673,3 +673,163 @@ table {
     padding: 12px 20px;
   }
 }
+/* ============================================
+   MOBILE HAMBURGER MENU
+   ============================================ */
+
+/* Nav container for flexbox layout */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+/* Navigation links as flexbox list */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.nav-links a:hover {
+  color: var(--st-gold);
+}
+
+/* Hamburger button - hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background-color: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger animation when active */
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ============================================
+   MOBILE RESPONSIVE - HAMBURGER MENU
+   ============================================ */
+@media (max-width: 768px) {
+  /* Show hamburger button */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Mobile menu styling */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--st-purple-dark);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 80px;
+    gap: 0;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+
+  /* Show menu when active */
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links a {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  /* Mobile dropdown styling */
+  .nav-links .dropdown-content {
+    position: static;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+    margin-top: 0;
+    transform: none;
+    border-radius: 0;
+    min-width: 100%;
+  }
+
+  .nav-links .dropdown.active .dropdown-content {
+    display: block;
+  }
+
+  .nav-links .dropdown-content a {
+    padding-left: 2.5rem;
+    color: var(--white);
+  }
+
+  .nav-links .dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--st-gold);
+  }
+
+  /* Overlay when menu is open */
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .nav-overlay.active {
+    display: block;
+  }
+}
