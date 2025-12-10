@@ -828,6 +828,7 @@ table {
    MOBILE RESPONSIVE - HAMBURGER MENU
    ============================================ */
 @media (max-width: 768px) {
+  
   /* Show hamburger button */
   .hamburger {
     display: flex;
@@ -866,32 +867,41 @@ table {
     font-size: 1.1rem;
   }
 
-  /* Mobile dropdown styling */
+  /* Hide the "Projects" dropdown link on mobile */
+  .nav-links .dropdown > a {
+    display: none;
+  }
+
+  /* Show all project links as flat list on mobile */
   .nav-links .dropdown-content {
     position: static;
-    display: none;
-    background-color: rgba(0, 0, 0, 0.2);
+    display: block;
+    background-color: transparent;
     box-shadow: none;
     margin-top: 0;
     transform: none;
     border-radius: 0;
     min-width: 100%;
-  }
-
-  .nav-links .dropdown.active .dropdown-content {
-    display: block;
+    padding: 0;
+    animation: none;
   }
 
   .nav-links .dropdown-content a {
-    padding-left: 2.5rem;
+    padding: 1rem 1.5rem;
     color: var(--white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .nav-links .dropdown-content a:hover {
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--st-gold);
+    padding-left: 1.5rem;
   }
 
+  /* Remove border from dropdown li since children have borders */
+  .nav-links .dropdown {
+    border-bottom: none;
+  }
   /* Overlay when menu is open */
   .nav-overlay {
     display: none;
