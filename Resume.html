@@ -4,59 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume</title>
+    <link rel="stylesheet" href="CSS/style.css" />
   </head>
+
   <body>
     <!-- NAVIGATION BAR -->
     <nav>
-      <div class="nav-container">
-        <!-- Hamburger Button (hidden on desktop) -->
-        <button
-          class="hamburger"
-          aria-label="Toggle navigation menu"
-          aria-expanded="false"
-        >
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-
-        <!-- Navigation Links -->
-        <ul class="nav-links">
-          <li><a href="Home.html">Home</a></li>
-          <li class="dropdown">
-            <a href="Project.html">Projects &#9662;</a>
-            <div class="dropdown-content">
-              <a href="Project.html">Project 1</a>
-              <a href="Project2.html">Project 2</a>
-              <a href="Project3.html">Project 3</a>
-            </div>
-          </li>
-          <li><a href="Resume.html">Resume</a></li>
-        </ul>
-      </div>
+      <table width="100%">
+        <tr>
+          <td align="left"><a href="Home.html">Home</a></td>
+          <td align="center"><a href="Project.html">Projects</a></td>
+          <td align="right"><a href="Resume.html">Resume</a></td>
+        </tr>
+      </table>
     </nav>
     <!-- END NAVIGATION BAR -->
 
-    <table width="100%">
-      <tr>
-        <td>
-          <div class="click-text">
-            <p>Click the image to edit the resume</p>
-          </div>
-        </td>
-        <td>
-          <div class="button-css">
-            <button>Download Resume</button>
-          </div>
-        </td>
-      </tr>
-    </table>
+    <!-- Resume Content Wrapper -->
+    <div class="resume-wrapper">
+      <!-- Header Section with Click Text and Button -->
+      <div class="resume-header">
+        <div class="click-text">
+          <p>Click the image to view full size</p>
+        </div>
+        <div class="button-css">
+          <a
+            href="Images/resume.pdf"
+            class="download-btn"
+            download
+            aria-label="Downloadable PDF of resume"
+          >
+            Download PDF
+          </a>
+        </div>
+      </div>
 
-    <br />
-
-    <!-- Resume image underneath -->
-    <div align="center">
-      <img src="Images/resume.png" alt="Resume" width="50%" />
+      <!-- Resume Image Container with Hover Animation -->
+      <div class="resume-image-container">
+        <a
+          href="Images/resume.png"
+          target="_blank"
+          class="resume-image-link"
+          aria-label="Open resume in new window"
+        >
+          <img src="Images/resume.png" alt="Resume Image" />
+        </a>
+      </div>
     </div>
   </body>
 </html>
