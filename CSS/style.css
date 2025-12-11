@@ -276,6 +276,22 @@ nav a:hover {
   margin-bottom: 0;
 }
 
+/* Email link styling */
+.contact-detail .email-link {
+  color: var(--st-purple);
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.contact-detail .email-link:hover {
+  color: var(--st-purple-dark);
+  text-decoration: underline;
+}
+
+.contact-detail .email-link:active {
+  color: var(--st-purple-light);
+}
+
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
@@ -828,7 +844,6 @@ table {
    MOBILE RESPONSIVE - HAMBURGER MENU
    ============================================ */
 @media (max-width: 768px) {
-  
   /* Show hamburger button */
   .hamburger {
     display: flex;
